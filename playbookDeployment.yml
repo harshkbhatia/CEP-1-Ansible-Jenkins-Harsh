@@ -9,6 +9,6 @@
   - name: From target folder copy the addressbook.war in current directory
     copy: src=/tmp/devopscode-repo/target/addressbook.war dest=/tmp/devopscode-repo remote_src=yes
   - name: Build the dockerfile
-    command: chdir=/tmp/devopscode-repo  docker build -t myimage:ansiblenew .
+    command: docker build -t myimage:ansible .
   - name: Run the image to deploy the application on tomcat container
-    command: docker run -d -P myimage:ansiblenew
+    command: docker run -d -P myimage:ansible
